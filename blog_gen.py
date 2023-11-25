@@ -18,7 +18,7 @@ def generate_blog(topic):
 
     client = OpenAI(
         # defaults to os.environ.get("OPENAI_API_KEY")
-        api_key=OPENAI_API_KEY,
+        api_key= st.secrets['OPEN_AI_KEY'] # OPENAI_API_KEY,
     )
 
     chat_completion = client.chat.completions.create(
