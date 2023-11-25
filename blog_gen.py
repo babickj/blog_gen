@@ -1,5 +1,6 @@
 import streamlit as st
 from openai import OpenAI
+from config import OPENAI_API_KEY
 # from newsapi import NewsApiClient
 import os
 
@@ -17,7 +18,7 @@ def generate_blog(topic):
 
     client = OpenAI(
         # defaults to os.environ.get("OPENAI_API_KEY")
-        # api_key="My API Key",
+        api_key=OPENAI_API_KEY,
     )
 
     chat_completion = client.chat.completions.create(
